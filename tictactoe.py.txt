@@ -1,0 +1,52 @@
+myboard={1:" ",2:" ",3:" ",4:" ",5:" ",6:" ",7:" ",8:" ",9:" "}
+def board(board):
+  print(board[1]+"|"+board[2]+"|"+board[3])
+  print("------")
+  print(board[4]+"|"+myboard[5]+"|"+board[6])
+  print("-----")
+  print(board[7]+"|"+board[8]+"|"+board[9])
+print("first player will get input as \"X\" and for second player as\"O\"")
+board(myboard)
+l1=[]
+l2=[]
+l3=[]
+end=0
+for i in range(1,10):
+  if end==0:
+    print("enter the position ")
+    j=int(input())
+    if myboard[j]==" ":
+      if 0<=j<=9:
+        if i%2==1:
+          myboard[j]="X"
+        else:
+          myboard[j]="O"
+      if 1<=j<=3:
+        l1.append(myboard[j])
+      elif 4<=j<=6:
+        l2.append(myboard[j])
+      else:
+        l3.append(myboard[j])
+    else:
+      print("alreday filled")
+      print("choose other number")
+    board(myboard)
+    if (l1.count("X")==3 or l2.count("X")==3 or l3.count("X")==3) or (l1.count("O")==3 or l2.count("O")==3 or l3.count("O")==3) :
+      end=1
+    for i in range(1,4):
+      if myboard[i]!=" " and myboard[i+3]!=" " and myboard[i+6]!=" ":
+        if myboard[i]==myboard[i+3]==myboard[i+6]:
+          end=1
+    if (myboard[1]!=" " and myboard[5]!=" " and myboard[9]!=" ") or (myboard[3]!=" " and myboard[5]!=" " and myboard[7]!=" "):
+        if (myboard[1]== myboard[5]==myboard[9]) or (myboard[3]==myboard[5]==myboard[7]):
+          end=1
+
+
+
+        
+
+print("game over") 
+
+  
+  
+
